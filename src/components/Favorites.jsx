@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Favorites = () => {
@@ -15,20 +15,19 @@ const Favorites = () => {
 
   return (
     <div className="mt-4">
-      <h2>Your Favorites</h2>
-      <Row className="mx-0 mt-3">
+      <h2 className="mb-4">Your Favorite Jobs</h2>
+      <Row>
         {favorites.map((job) => (
-          <Col xs={12} md={6} lg={4} key={job.id}>
-            <div
-              className="border p-3 mb-3"
-              style={{ borderRadius: 4, border: '1px solid #00000033' }}
-            >
-              <h5>{job.title}</h5>
-              <p>{job.company_name}</p>
-              <Link to={`/company/${job.company_name}`} className="btn btn-primary">
-                View Company
-              </Link>
-            </div>
+          <Col xs={12} md={6} lg={4} key={job.id} className="mb-4">
+            <Card className="h-100 shadow-sm">
+              <Card.Body>
+                <Card.Title>{job.title}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{job.company_name}</Card.Subtitle>
+                <Button as={Link} to={`/company/${job.company_name}`} variant="primary">
+                  View Company
+                </Button>
+              </Card.Body>
+            </Card>
           </Col>
         ))}
       </Row>

@@ -18,21 +18,23 @@ const Job = ({ data }) => {
 
   return (
     <Row
-      className="mx-0 mt-3 p-3"
-      style={{ border: '1px solid #00000033', borderRadius: 4 }}
+      className="mx-0 mt-3 p-3 shadow-sm bg-white rounded align-items-center"
+      style={{ border: '1px solid #dee2e6' }}
     >
-      <Col xs={3}>
+      <Col xs={3} className="d-flex flex-column align-items-start">
         <i
-          className={`bi ${isFavourite ? 'bi-heart-fill text-danger' : 'bi-heart text-black'} me-3`}
-          title={isFavourite ? 'remove from favourites' : 'add to favourites'}
+          className={`bi ${isFavourite ? 'bi-heart-fill text-danger' : 'bi-heart'} fs-4 mb-2`}
+          title={isFavourite ? 'Remove from favorites' : 'Add to favorites'}
           style={{ cursor: 'pointer' }}
           onClick={toggleFavourite}
         ></i>
-        <Link to={`/${data.company_name}`}>{data.company_name}</Link>
+        <Link to={`/company/${data.company_name}`} className="fw-bold">
+          {data.company_name}
+        </Link>
       </Col>
       <Col xs={9}>
-        <a href={data.url} target="_blank" rel="noreferrer">
-          {data.title}
+        <a href={data.url} target="_blank" rel="noreferrer" className="text-decoration-none">
+          <h5 className="mb-0">{data.title}</h5>
         </a>
       </Col>
     </Row>
