@@ -1,18 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import MainSearch from './components/MainSearch'
-import CompanySearchResults from './components/CompanySearchResults'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
+import Favorites from './components/Favorites.jsx';
+import Job from './components/Job';
+import CompanySearchResults from './components/CompanySearchResults';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainSearch />} />
-        <Route path="/:company" element={<CompanySearchResults />} />
-      </Routes>
-    </BrowserRouter>
-  )
+    <Routes>
+      <Route path="/" element={<Job />} />
+      <Route path="/favorites" element={<Favorites />} />
+      <Route path="/company/:company" element={<CompanySearchResults />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
