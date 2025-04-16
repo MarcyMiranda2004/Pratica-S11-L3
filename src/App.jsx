@@ -7,10 +7,10 @@ import './App.css';
 
 function App() {
   return (
-    <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+    <div className="app-wrapper">
+      <Navbar bg="dark" variant="dark" expand="lg" className="shadow">
         <Container>
-          <Navbar.Brand as={Link} to="/">JobFinder</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">🚀 JobFinder</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
@@ -21,14 +21,16 @@ function App() {
         </Container>
       </Navbar>
 
-      <Container className="py-4">
-        <Routes>
-          <Route path="/" element={<MainSearch />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/company/:company" element={<CompanySearchResults />} />
-        </Routes>
-      </Container>
-    </>
+      <main className="main-content">
+        <Container className="py-5">
+          <Routes>
+            <Route path="/" element={<MainSearch />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/company/:company" element={<CompanySearchResults />} />
+          </Routes>
+        </Container>
+      </main>
+    </div>
   );
 }
 

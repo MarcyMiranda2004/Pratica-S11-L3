@@ -1,9 +1,41 @@
-body {
-  background-color: #f8f9fa;
+body,
+html,
+#root {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
   font-family: "Segoe UI", sans-serif;
 }
 
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.card {
+  border: none;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2,
+h5 {
+  color: #343a40;
+}
+
 a {
+  text-decoration: none;
   color: #0d6efd;
 }
 
